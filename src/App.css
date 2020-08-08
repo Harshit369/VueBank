@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+* {
+  box-sizing: border-box;
+}
+
+/* variable tokens */
+:root {
+  --black: #212121;
+  --night: #2f2f2f;
+  --primary: #3977ed;
+  --secondary: #d5d5d5;
+  --secondary-light: #e5e5e5;
+
+  --text: #2f2f2f;
+  --text-light: #868686;
+
+  --font-small: 12px;
+  --font-size: 14px;
+  --font-large: 16px;
+
+  --border: 1px solid var(--secondary);
+  --border-light: 1px solid var(--secondary-light);
+}
+
+body,
+html {
+  color: var(--night);
+  height: 100vh;
+  width: 100vw;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-size: var(--font-size);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* helper classes */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-small {
+  font-size: var(--font-small);
+}
+.text-large {
+  font-size: var(--font-large);
+}
+.text-light {
+  color: var(--text-light);
+}
+
+/* buttons */
+button {
+  background-color: var(--secondary);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  border: 0;
+  border-radius: 3px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  text-align: center;
+
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button.primary {
+  background-color: var(--primary);
+  color: white;
+}
