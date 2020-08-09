@@ -2,8 +2,25 @@
   <table>
     <thead>
       <tr>
-        <th v-for="(column, columnIndex) in columns" :key="columnIndex">
+        <th
+          :class="{ 'cursor-pointer': column.sortable }"
+          v-for="(column, columnIndex) in columns"
+          @click="
+            column.sortable
+              ? onSort({
+                  column: column.name,
+                  type: sort.type == 'asc' ? 'desc' : 'asc',
+                })
+              : null
+          "
+          :key="columnIndex"
+        >
           {{ column.label }}
+          <i
+            class="material-icons sort-icon"
+            v-if="sort.column == column.name"
+            >{{ sort.type == "asc" ? "arrow_upward" : "arrow_downward" }}</i
+          >
         </th>
         <th v-if="hasActions"></th>
       </tr>
@@ -28,6 +45,8 @@ export default {
     columns: Array,
     data: Array,
     hasActions: Boolean,
+    sort: Object,
+    onSort: Function,
   },
   data() {
     return {};
@@ -58,5 +77,9 @@ tr {
 th,
 td {
   padding: 8px;
+}
+
+.sort-icon {
+  font-size: var(--font-small);
 }
 </style>

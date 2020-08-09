@@ -41,18 +41,22 @@ export const employeeSchema = [
   {
     label: "ID",
     name: "id",
+    sortable: true,
   },
   {
     label: "Full Name",
     name: "preferredFullName",
+    sortable: true,
   },
   {
     label: "Employee Code",
     name: "employeeCode",
+    sortable: true,
   },
   {
     label: "Job Title",
     name: "jobTitleName",
+    sortable: true,
   },
   {
     label: "Phone Number",
@@ -126,8 +130,4 @@ const availableEmployees = savedEmployees
   ? JSON.parse(savedEmployees)
   : defaultEmployees;
 
-export default new Employees([
-  // ...availableEmployees,
-  // ...availableEmployees,
-  ...availableEmployees,
-]);
+export default new Employees([...availableEmployees]);
