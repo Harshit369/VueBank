@@ -43,6 +43,10 @@ class Employees {
     localStorage.setItem("employees", JSON.stringify(this.employees));
   };
 
+  getAllEmployee = () => {
+    return this.employees;
+  };
+
   getEmployee(empId) {
     const empIndex = this.employees.findIndex(({ id }) => id == empId);
     if (empIndex < 0) {

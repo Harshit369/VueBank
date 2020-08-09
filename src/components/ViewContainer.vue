@@ -36,7 +36,7 @@ export default {
   },
   data() {
     return {
-      addEmployeeModal: false,
+      addEmployeeModal: {},
       viewEmployeeModal: false,
     };
   },
