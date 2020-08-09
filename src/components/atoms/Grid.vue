@@ -9,7 +9,7 @@
             column.sortable
               ? onSort({
                   column: column.name,
-                  type: sort.type == 'asc' ? 'desc' : 'asc',
+                  type: sort.type == 'asc' ? 'desc' : 'asc'
                 })
               : null
           "
@@ -46,11 +46,11 @@ export default {
     data: Array,
     hasActions: Boolean,
     sort: Object,
-    onSort: Function,
+    onSort: Function
   },
   data() {
     return {};
-  },
+  }
 };
 </script>
 

@@ -2,7 +2,7 @@
   <select
     v-bind:class="{
       'with-group-right': withGroup == 'right',
-      'with-group-left': withGroup == 'left',
+      'with-group-left': withGroup == 'left'
     }"
     @change="onChange($event.target.value)"
   >
@@ -25,7 +25,7 @@ export default {
     options: Array,
     withGroup: String,
     onChange: Function,
-    value: String,
-  },
+    value: String
+  }
 };
 </script>

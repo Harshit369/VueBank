@@ -12,7 +12,7 @@ export default {
   name: "popover",
   data() {
     return {
-      open: false,
+      open: false
     };
   },
   methods: {
@@ -25,14 +25,14 @@ export default {
     },
     openPopover() {
       this.open = true;
-    },
+    }
   },
   mounted() {
     document.addEventListener("click", this.closePopover);
   },
   beforeDestroy() {
     window.removeEventListener("click", this.closePopover);
-  },
+  }
 };
 </script>
 

@@ -62,27 +62,27 @@ const containsSubString = (string = "", substr = "") =>
 export default {
   name: "ViewContainer",
   props: {
-    title: String,
+    title: String
   },
   data() {
     return {
       updateError: false,
       filters: {
         column: "preferredFullName",
-        search: "",
+        search: ""
       },
       employeeData: employeeService.getAllEmployee(),
       employeeSchema: employeeSchema,
       addEmployeeModal: false,
-      viewEmployeeModal: false,
+      viewEmployeeModal: false
     };
   },
   computed: {
     filteredData: function() {
-      return (this.employeeData || []).filter((emp) => {
+      return (this.employeeData || []).filter(emp => {
         return containsSubString(emp[this.filters.column], this.filters.search);
       });
-    },
+    }
   },
   methods: {
     onEmployeeUpdate: function(details) {
@@ -116,14 +116,14 @@ export default {
     },
     editEmployeeDetails: function(emp) {
       this.addEmployeeModal = { ...emp, editMode: true };
-    },
+    }
   },
   components: {
     Dropdown,
     AddEmployee,
     ViewEmployee,
-    EmployeeTable,
-  },
+    EmployeeTable
+  }
 };
 </script>
 

@@ -28,14 +28,14 @@ import { employeeSchema } from "../services/employeeService";
 export default {
   name: "add-employee",
   props: {
-    details: Object,
+    details: Object
   },
   data() {
     return { employeeSchema };
   },
   components: {
-    Modal,
-  },
+    Modal
+  }
 };
 </script>
 

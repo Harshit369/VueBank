@@ -9,7 +9,7 @@ const defaultEmployees = [
     region: "CA",
     dob: "01/10/1993",
     phoneNumber: "408-1234567",
-    emailAddress: "romin.k.irani@gmail.com",
+    emailAddress: "romin.k.irani@gmail.com"
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const defaultEmployees = [
     region: "CA",
     dob: "01/10/1992",
     phoneNumber: "408-1111111",
-    emailAddress: "neilrirani@gmail.com",
+    emailAddress: "neilrirani@gmail.com"
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const defaultEmployees = [
     employeeCode: "E3",
     region: "CA",
     phoneNumber: "408-2222222",
-    emailAddress: "tomhanks@gmail.com",
+    emailAddress: "tomhanks@gmail.com"
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const defaultEmployees = [
     employeeCode: "E4",
     region: "IS",
     phoneNumber: "408-2123822",
-    emailAddress: "patel.harshal@gmail.com",
+    emailAddress: "patel.harshal@gmail.com"
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const defaultEmployees = [
     employeeCode: "E5",
     region: "AUS",
     phoneNumber: "408-6376382",
-    emailAddress: "Warner.david@gmail.com",
+    emailAddress: "Warner.david@gmail.com"
   },
   {
     id: 6,
@@ -69,7 +69,7 @@ const defaultEmployees = [
     employeeCode: "E6",
     region: "AUS",
     phoneNumber: "408-2352372",
-    emailAddress: "sachdevs@gmail.com",
+    emailAddress: "sachdevs@gmail.com"
   },
   {
     id: 7,
@@ -81,7 +81,7 @@ const defaultEmployees = [
     employeeCode: "E7",
     region: "CA",
     phoneNumber: "408-2232826",
-    emailAddress: "ganguly@bcci.com",
+    emailAddress: "ganguly@bcci.com"
   },
   {
     id: 8,
@@ -93,7 +93,7 @@ const defaultEmployees = [
     employeeCode: "E8",
     region: "PK",
     phoneNumber: "413-3738362",
-    emailAddress: "dale.steyn@gmail.com",
+    emailAddress: "dale.steyn@gmail.com"
   },
   {
     id: 9,
@@ -105,7 +105,7 @@ const defaultEmployees = [
     employeeCode: "E9",
     region: "PR",
     phoneNumber: "463-7483633",
-    emailAddress: "h.thakral369@gmail.com",
+    emailAddress: "h.thakral369@gmail.com"
   },
   {
     id: 10,
@@ -117,7 +117,7 @@ const defaultEmployees = [
     employeeCode: "E10",
     region: "US",
     phoneNumber: "363-7483836",
-    emailAddress: "middha.rajan@gmail.com",
+    emailAddress: "middha.rajan@gmail.com"
   },
   {
     id: 11,
@@ -129,7 +129,7 @@ const defaultEmployees = [
     employeeCode: "E11",
     region: "PL",
     phoneNumber: "262-3352422",
-    emailAddress: "jhaa.abhskek@gmail.com",
+    emailAddress: "jhaa.abhskek@gmail.com"
   },
   {
     id: 12,
@@ -141,7 +141,7 @@ const defaultEmployees = [
     employeeCode: "E12",
     region: "CA",
     phoneNumber: "408-35363733",
-    emailAddress: "jainvishal@gmail.com",
+    emailAddress: "jainvishal@gmail.com"
   },
   {
     id: 13,
@@ -153,47 +153,47 @@ const defaultEmployees = [
     employeeCode: "E13",
     region: "JA",
     phoneNumber: "353-8373535",
-    emailAddress: "aakanksh.pm@gmail.com",
-  },
+    emailAddress: "aakanksh.pm@gmail.com"
+  }
 ];
 
 export const employeeSchema = [
   {
     label: "ID",
     name: "id",
-    sortable: true,
+    sortable: true
   },
   {
     label: "Full Name",
     name: "preferredFullName",
-    sortable: true,
+    sortable: true
   },
   {
     label: "Employee Code",
-    name: "employeeCode",
+    name: "employeeCode"
   },
   {
     label: "Job Title",
     name: "jobTitleName",
-    sortable: true,
+    sortable: true
   },
   {
     label: "Phone Number",
-    name: "phoneNumber",
+    name: "phoneNumber"
   },
   {
     label: "Email ID",
-    name: "emailAddress",
+    name: "emailAddress"
   },
   {
     label: "Region",
     name: "region",
-    sortable: true,
+    sortable: true
   },
   {
     label: "DOB",
-    name: "dob",
-  },
+    name: "dob"
+  }
 ];
 
 class Employees {

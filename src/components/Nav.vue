@@ -13,7 +13,7 @@
 <script>
 export default {
   name: "Nav",
-  props: {},
+  props: {}
 };
 </script>
 

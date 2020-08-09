@@ -77,14 +77,14 @@ const initialData = {
   emailAddress: "",
   phoneNumber: "",
   region: "",
-  dob: "",
+  dob: ""
 };
 
 export default {
   name: "add-employee",
   props: {
     filledDetails: Object,
-    error: Boolean,
+    error: Boolean
   },
   data() {
     const prefilledData = Object.keys(initialData).reduce((result, key) => {
@@ -93,7 +93,7 @@ export default {
     }, {});
     return {
       ...initialData,
-      ...prefilledData,
+      ...prefilledData
     };
   },
   computed: {
@@ -102,7 +102,7 @@ export default {
     },
     employeeCode: function() {
       return this.id ? "E" + this.id : this.id;
-    },
+    }
   },
   methods: {
     save() {
@@ -116,18 +116,18 @@ export default {
         "region",
         "dob",
         "employeeCode",
-        "preferredFullName",
+        "preferredFullName"
       ].reduce((result, key) => {
         result[key] = this[key];
         return result;
       }, {});
 
       this.$emit("submit", details);
-    },
+    }
   },
   components: {
-    Modal,
-  },
+    Modal
+  }
 };
 </script>
 

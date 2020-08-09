@@ -35,28 +35,28 @@ export default {
   name: "employee-table",
   components: {
     Grid,
-    Popover,
+    Popover
   },
   props: {
     viewEmployee: Function,
     editEmployee: Function,
     deleteEmployee: Function,
     data: Array,
-    schema: Array,
+    schema: Array
   },
   data() {
     return {
       sort: {
         column: "id",
-        type: "asc",
+        type: "asc"
       },
-      hasActions: true,
+      hasActions: true
     };
   },
   methods: {
     handleSortChange: function(obj) {
       this.sort = obj;
-    },
+    }
   },
   computed: {
     sortedData: function() {
@@ -78,8 +78,8 @@ export default {
       } else {
         return this.data;
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

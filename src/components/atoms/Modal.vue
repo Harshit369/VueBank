@@ -22,22 +22,22 @@
 export default {
   name: "modal",
   props: {
-    size: String,
+    size: String
   },
   data() {
     return {
       dimensionObj: {
         small: this.size == "small",
         medium: this.size == "medium",
-        large: this.size == "large",
-      },
+        large: this.size == "large"
+      }
     };
   },
   computed: {
     hasFooterSlot() {
       return !!this.$slots.footer;
-    },
-  },
+    }
+  }
 };
 </script>
 
