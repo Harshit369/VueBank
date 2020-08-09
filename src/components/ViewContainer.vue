@@ -35,8 +35,9 @@
     </div>
     <add-employee
       v-if="addEmployeeModal"
+      :error="updateError"
       :filledDetails="addEmployeeModal"
-      @close="addEmployeeModal = false"
+      @close="closeEmployeeUpdateModal"
       @submit="onEmployeeUpdate"
     />
     <view-employee
@@ -65,6 +66,7 @@ export default {
   },
   data() {
     return {
+      updateError: false,
       filters: {
         column: "preferredFullName",
         search: "",
@@ -84,13 +86,18 @@ export default {
   },
   methods: {
     onEmployeeUpdate: function(details) {
+      let error = false;
       if (this.addEmployeeModal && this.addEmployeeModal.editMode) {
-        employeeService.updateEmployee(details);
+        error = !employeeService.updateEmployee(details);
       } else {
-        employeeService.addEmployee(details);
+        error = !employeeService.addEmployee(details);
       }
-      this.addEmployeeModal = false;
-      this.employeeData = employeeService.getAllEmployee();
+      if (error) {
+        this.updateError = true;
+      } else {
+        this.closeEmployeeUpdateModal();
+        this.employeeData = employeeService.getAllEmployee();
+      }
     },
     deleteEmployee: function(emp) {
       employeeService.deleteEmployee(emp.id);
@@ -99,6 +106,10 @@ export default {
     // shallow actions
     onSearchColumnChange: function(val) {
       this.filters.column = val;
+    },
+    closeEmployeeUpdateModal: function() {
+      this.updateError = false;
+      this.addEmployeeModal = false;
     },
     showEmployeeDetails: function(emp) {
       this.viewEmployeeModal = emp;

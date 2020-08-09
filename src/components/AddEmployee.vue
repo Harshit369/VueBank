@@ -8,7 +8,7 @@
       <div class="row">
         <div style="padding-right: 12px" class="col col-6">
           <label class="text-light">ID</label>
-          <input :placeholder="'eg: EM01'" v-model="id" />
+          <input :placeholder="'eg: 22'" v-model="id" />
         </div>
       </div>
       <div class="row">
@@ -56,6 +56,10 @@
           {{ editMode ? "Save" : "Create" }}
         </button>
         <button @click="$emit('close')">Cancel</button>
+
+        <div v-if="error" class="update-error">
+          <i class="material-icons">error</i>&nbsp;Please enter a valid id
+        </div>
       </div>
     </template>
   </modal>
@@ -80,6 +84,7 @@ export default {
   name: "add-employee",
   props: {
     filledDetails: Object,
+    error: Boolean,
   },
   data() {
     const prefilledData = Object.keys(initialData).reduce((result, key) => {
@@ -156,9 +161,22 @@ export default {
 
 .footer-wrapper {
   display: flex;
+  align-items: center;
 }
 
 .footer-wrapper button {
   margin-right: 8px;
+}
+
+.update-error {
+  display: flex;
+  align-items: center;
+  right: 0px;
+  margin-left: auto;
+  color: maroon;
+}
+.update-error i {
+  margin-right: 4px;
+  font-size: var(--font-size);
 }
 </style>

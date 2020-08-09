@@ -171,7 +171,6 @@ export const employeeSchema = [
   {
     label: "Employee Code",
     name: "employeeCode",
-    sortable: true,
   },
   {
     label: "Job Title",
@@ -189,6 +188,7 @@ export const employeeSchema = [
   {
     label: "Region",
     name: "region",
+    sortable: true,
   },
   {
     label: "DOB",
@@ -219,6 +219,9 @@ class Employees {
   }
 
   addEmployee(emp) {
+    if (!emp.id || this.getEmployee(emp.id)) {
+      return false;
+    }
     this.employees.push(emp);
     this.updateLS();
     return emp;
@@ -231,7 +234,7 @@ class Employees {
     }
     this.employees.splice(empIndex, 1, emp);
     this.updateLS();
-    return true;
+    return emp;
   }
 
   deleteEmployee(empId) {

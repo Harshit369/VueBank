@@ -63,6 +63,7 @@ table {
 }
 
 th {
+  z-index: 2;
   background-color: white;
   position: sticky;
   position: -webkit-sticky;
