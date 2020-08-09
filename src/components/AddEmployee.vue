@@ -64,22 +64,31 @@
 <script>
 import Modal from "./atoms/Modal";
 
+const initialData = {
+  editMode: false,
+  id: "",
+  firstName: "",
+  lastName: "",
+  jobTitleName: "",
+  emailAddress: "",
+  phoneNumber: "",
+  region: "",
+  dob: "",
+};
+
 export default {
   name: "add-employee",
   props: {
     filledDetails: Object,
   },
   data() {
+    const prefilledData = Object.keys(initialData).reduce((result, key) => {
+      result[key] = this.filledDetails[key];
+      return result;
+    }, {});
     return {
-      id: "",
-      firstName: "",
-      lastName: "",
-      jobTitleName: "",
-      emailAddress: "",
-      phoneNumber: "",
-      region: "",
-      dob: "",
-      ...(this.filledDetails || {}),
+      ...initialData,
+      ...prefilledData,
     };
   },
   computed: {
@@ -94,7 +103,6 @@ export default {
     save() {
       const details = [
         "id",
-        "employeeCode",
         "firstName",
         "lastName",
         "jobTitleName",
@@ -102,6 +110,7 @@ export default {
         "phoneNumber",
         "region",
         "dob",
+        "employeeCode",
         "preferredFullName",
       ].reduce((result, key) => {
         result[key] = this[key];

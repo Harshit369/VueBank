@@ -3,7 +3,7 @@
     <div class="header">
       <h3 class="heading">{{ title }}</h3>
       <div class="actions">
-        <button class="primary" @click="addEmployeeModal = true">
+        <button class="primary" @click="addEmployeeModal = {}">
           Create Employee
         </button>
       </div>
@@ -84,7 +84,6 @@ export default {
   },
   methods: {
     onEmployeeUpdate: function(details) {
-      debugger;
       if (this.addEmployeeModal && this.addEmployeeModal.editMode) {
         employeeService.updateEmployee(details);
       } else {
