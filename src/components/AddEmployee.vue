@@ -1,11 +1,12 @@
 <template>
   <modal :size="'medium'" @close="$emit('close')">
     <template v-slot:header="">
-      <h2>Create Employee</h2>
+      <h2 v-if="editMode">Update Employee</h2>
+      <h2 v-else>Create Employee</h2>
     </template>
     <template v-slot:body="">
       <div class="row">
-        <div class="col col-6">
+        <div style="padding-right: 12px" class="col col-6">
           <label class="text-light">ID</label>
           <input :placeholder="'eg: EM01'" v-model="id" />
         </div>
@@ -45,13 +46,15 @@
         </div>
         <div class="col col-6">
           <label class="text-light">DOB</label>
-          <input :placeholder="'MM-DD-YYYY'" v-model="dob" />
+          <input :placeholder="'DD/MM/YYYY'" v-model="dob" />
         </div>
       </div>
     </template>
     <template v-slot:footer="">
       <div class="footer-wrapper">
-        <button class="primary" @click="save">Save</button>
+        <button class="primary" @click="save">
+          {{ editMode ? "Save" : "Create" }}
+        </button>
         <button @click="$emit('close')">Cancel</button>
       </div>
     </template>
@@ -83,11 +86,29 @@ export default {
     preferredFullName: function() {
       return [this.firstName, this.lastName].join(" ");
     },
+    employeeCode: function() {
+      return this.id ? "E" + this.id : this.id;
+    },
   },
   methods: {
     save() {
-      console.log(this);
-      debugger;
+      const details = [
+        "id",
+        "employeeCode",
+        "firstName",
+        "lastName",
+        "jobTitleName",
+        "emailAddress",
+        "phoneNumber",
+        "region",
+        "dob",
+        "preferredFullName",
+      ].reduce((result, key) => {
+        result[key] = this[key];
+        return result;
+      }, {});
+
+      this.$emit("submit", details);
     },
   },
   components: {

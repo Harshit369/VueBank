@@ -2,15 +2,18 @@
   <nav class="nav">
     <div class="nav-left">
       <img id="logo" alt="Vue logo" src="../assets/logo.png" />
+      <h2 class="text-night">UE BANK</h2>
     </div>
-    <div class="nav-right"></div>
+    <div class="nav-right">
+      <div class="avatar">HT</div>
+    </div>
   </nav>
 </template>
 
 <script>
 export default {
   name: "Nav",
-  props: {}
+  props: {},
 };
 </script>
 

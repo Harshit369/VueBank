@@ -2,11 +2,7 @@
   <table>
     <thead>
       <tr>
-        <th
-          align="left"
-          v-for="(column, columnIndex) in columns"
-          :key="columnIndex"
-        >
+        <th v-for="(column, columnIndex) in columns" :key="columnIndex">
           {{ column.label }}
         </th>
         <th v-if="hasActions"></th>
@@ -15,11 +11,7 @@
     <tbody>
       <tr v-for="(row, index) in data" :key="index">
         <td v-for="(column, columnIndex) in columns" :key="columnIndex">
-          {{
-            typeof column.template == "function"
-              ? column.template(row)
-              : row[column.name]
-          }}
+          {{ row[column.name] }}
         </td>
         <td v-if="hasActions">
           <slot name="actions" v-bind:employee="row"></slot>
@@ -45,11 +37,18 @@ export default {
 
 <style scoped>
 table {
+  position: relative;
   width: 100%;
+  border-collapse: collapse;
+  text-align: left;
 }
 
-thead,
-tbody {
+th {
+  background-color: white;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
 }
 
 tr {

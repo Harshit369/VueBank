@@ -21,6 +21,7 @@
 
   --font-bold: 600;
 
+  --border-radius: 3px;
   --border: 1px solid var(--secondary);
   --border-light: 1px solid var(--secondary-light);
 }
@@ -71,6 +72,9 @@ p {
 .text-light {
   color: var(--text-light);
 }
+.text-night {
+  color: aliceblue;
+}
 
 /* buttons */
 button {
@@ -87,7 +91,7 @@ button {
   user-select: none;
 
   border: 0;
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   padding: 8px 12px;
 
   text-align: center;
@@ -115,7 +119,7 @@ input {
   flex-direction: row;
   align-items: center;
   box-sizing: border-box;
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   border: var(--border);
   padding-right: 8px;
   padding-left: 8px;
@@ -126,4 +130,36 @@ input {
 
 input::placeholder {
   color: var(--text-light);
+}
+
+/* avatars */
+.avatar {
+  height: 32px;
+  width: 32px;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: bisque;
+}
+
+/* select */
+select {
+  padding: 8px 4px;
+  background-color: var(--secondary);
+  color: var(--text);
+  border: none;
+  outline: 0;
+  height: 32px;
+  border-radius: var(--border-radius);
+}
+
+.with-group-right {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.with-group-left {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
